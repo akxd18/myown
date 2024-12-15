@@ -1,4 +1,4 @@
-import hashlib
+
 import telebot
 from telebot import types
 from io import BytesIO
