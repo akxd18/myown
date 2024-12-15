@@ -8,3 +8,7 @@ import os
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter
+pyTelegramBotAPI==4.0.1
+requests==2.28.1
+Pillow==9.2.0
+opencv-python==4.6.0.66
