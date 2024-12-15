@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
-# Install system dependencies for OpenCV
-RUN apt-get update && apt-get install -y libgl1-mesa-glx
+# Install system dependencies for OpenCV and GLib
+RUN apt-get update && apt-get install -y libglib2.0-0 libgl1-mesa-glx
 
 # Set the working directory
 WORKDIR /app
