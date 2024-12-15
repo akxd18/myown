@@ -118,7 +118,7 @@ def add_action_buttons(message):
     # Add HD, BW, Adjust buttons
     hd_button = types.InlineKeyboardButton("Eɴʜᴀɴᴄᴇ", callback_data=f"hd:{hashed_file_id}")
     bw_button = types.InlineKeyboardButton("Bᴀʟᴄᴋ & Wʜɪᴛᴇ", callback_data=f"bw:{hashed_file_id}")
-    adjust_button = types.InlineKeyboardButton("Aᴅɪᴜꜱᴛ", callback_data=f"adjust:{hashed_file_id}")
+    adjust_button = types.InlineKeyboardButton("Aᴅjᴜꜱᴛ", callback_data=f"adjust:{hashed_file_id}")
 
     keyboard.add(hd_button, bw_button, adjust_button)
 
@@ -258,10 +258,13 @@ def dynamic_adjust(img):
     img = enhancer.enhance(1.2)
 
     enhancer = ImageEnhance.Sharpness(img)
-    img = enhancer.enhance(2.0)
+    img = enhancer.enhance(2)
 
     enhancer = ImageEnhance.Color(img)
-    img = enhancer.enhance(1.5)
+    img = enhancer.enhance(1)
+
+    enhancer = ImageEnhance.Brightness(img)
+    img = enhancer.enhance(1.2)
 
     return img
 
