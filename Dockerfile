@@ -1,14 +1,16 @@
-# Base image (Python)
 FROM python:3.9-slim
 
-# Set working directory in the container
+# Install system dependencies for OpenCV
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container
+# Copy the content of the current directory to the /app directory in the container
 COPY . /app
 
-# Install necessary dependencies (requests, Pillow, telebot, etc.)
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Command to run the bot
+# Command to run your bot (adjust to your actual script)
 CMD ["python", "main.py"]
